@@ -1,6 +1,10 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
+import Router from "../views/Router"
+import VuexDemo from "../views/VuexDemo"
+import AxiosDemo from "../views/AxiosDemo"
+// import ElementUI from "../views/ElementUI"
 
 Vue.use(VueRouter)
 
@@ -13,15 +17,32 @@ Vue.use(VueRouter)
   {
     path: '/about',
     name: 'About',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
-  }
+    component: () => import('../views/About.vue')
+  },
+  {
+    path: '/router',
+    name: 'Hab',
+    component: Router
+  },
+  {
+    path: "/vuexdemo",
+    name: VuexDemo,
+    component: VuexDemo
+  },
+  {
+    path: "/axiosdemo",
+    name: AxiosDemo,
+    component: AxiosDemo
+  },
+  // {
+  //   path: '/element',
+  //   name: 'ElementUI',
+  //   component: ElementUI
+  // }
 ]
 
 const router = new VueRouter({
-  mode: 'history',
+  // mode: 'history',
   base: process.env.BASE_URL,
   routes
 })
